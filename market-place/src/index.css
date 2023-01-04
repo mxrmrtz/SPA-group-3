@@ -1,15 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: #3f3f3f;
+  /* background-color: #3f3f3f; */
 }
 
+.cardStyle {
+  width: 310px;
+  height: 410px;
+  background-color: gray;
+  border: solid black 1px;
+  margin: 1rem;
+}
+
+.imgStyle {
+  width: 250px;
+  height: 250px;
+}
+
+.navBar2 {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+  background-color: lightskyblue;
+  width: 100%;
+  border: 3px solid blue;
+  border-radius: 0.5rem;
+}
+
+.brandFilter {
+  display: flex;
+  flex-direction: row;
+}
+
+.brandName {
+  margin: 0 0.3rem;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.location {
+  margin: 0 1rem;
+}
+
+.brandTitle {
+  margin: 0 1rem 0 5rem;
+  font-weight: 600;
+}
