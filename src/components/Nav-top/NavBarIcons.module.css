@@ -1,0 +1,11 @@
+.iconsContainer {
+	display: flex;
+	align-items: center;
+}
+
+.favoritesContainer,
+.heartContainer {
+	display: flex;
+	align-items: center;
+	margin: 0.5rem;
+}
