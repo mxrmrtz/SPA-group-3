@@ -7,7 +7,7 @@ const SearchBar = () => {
 			<form>
 				<input placeholder="DJI phantom"></input>
 				<button>
-					<img src={Search}></img>
+					<img src={Search} alt="search icon" />
 				</button>
 			</form>
 		</div>

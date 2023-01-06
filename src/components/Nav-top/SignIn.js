@@ -1,8 +1,7 @@
 const SignIn = () => {
-	
 	return (
 		<div>
-			<button >SignIn</button>
+			<button>SignIn</button>
 		</div>
 	);
 };
