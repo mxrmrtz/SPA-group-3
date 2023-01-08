@@ -2,13 +2,17 @@ import React from "react";
 import heart from "../../assets/icons/heart-icon.svg";
 import add from "../../assets/icons/Add-icon.svg";
 import ProductItemCSS from "./ProductItem.module.css";
-const ProductItem = ({ productsData, addToCart }) => {
+const ProductItem = ({ productsData, addToCart, toggleAddFavorites }) => {
 	return (
 		<li className={ProductItemCSS.productListItem}>
 			<div className={ProductItemCSS.productContainer}>
 				<div className={ProductItemCSS.iconsContainer}>
 					<button>
-						<img src={heart} alt="hert icon used to save an item fro later" />
+						<img
+							src={heart}
+							alt="hert icon used to save an item fro later"
+							onClick={() => toggleAddFavorites(productsData)}
+						/>
 					</button>
 					<button>
 						<img
