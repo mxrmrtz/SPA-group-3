@@ -5,12 +5,12 @@ import NavBarIcons from "./NavBarIcons";
 import SignIn from "./SignIn";
 import NavBarCSS from "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ toggleCart, cartLen }) => {
 	return (
 		<nav className={NavBarCSS.navbarContainer}>
 			<Logo />
 			<SearchBar />
-			<NavBarIcons />
+			<NavBarIcons toggleCart={toggleCart} cartLen={cartLen} />
 			<SignIn />
 		</nav>
 	);
