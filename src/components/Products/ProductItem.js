@@ -2,7 +2,7 @@ import React from "react";
 import heart from "../../assets/icons/heart-icon.svg";
 import add from "../../assets/icons/Add-icon.svg";
 import ProductItemCSS from "./ProductItem.module.css";
-const ProductItem = ({ productsData }) => {
+const ProductItem = ({ productsData, addToCart }) => {
 	return (
 		<li className={ProductItemCSS.productListItem}>
 			<div className={ProductItemCSS.productContainer}>
@@ -11,7 +11,11 @@ const ProductItem = ({ productsData }) => {
 						<img src={heart} alt="hert icon used to save an item fro later" />
 					</button>
 					<button>
-						<img src={add} alt="icon used to add item to shopping cart" />
+						<img
+							src={add}
+							alt="icon used to add item to shopping cart"
+							onClick={() => addToCart(productsData)}
+						/>
 					</button>
 				</div>
 				<img
