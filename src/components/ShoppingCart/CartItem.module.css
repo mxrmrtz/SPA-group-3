@@ -1,0 +1,11 @@
+.cartItemContainer {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	width: 180px;
+	border: 1px solid black;
+	margin: 5px;
+}
+.cartItemImage {
+	width: 150px;
+}
