@@ -10,9 +10,9 @@ const ProductList = ({
 	return (
 		<ul className={ProductListCSS.productGrid}>
 			{productsData
-				.filter((product) =>
-					product.title.toLowerCase().includes(searchBarFilter)
-				)
+				// .filter((product) =>
+				// 	product.title.toLowerCase().includes(searchBarFilter)
+				// )
 				.map((product) => (
 					<ProductItem
 						key={product.id}

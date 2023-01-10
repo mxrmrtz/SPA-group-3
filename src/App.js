@@ -16,11 +16,19 @@ function App() {
 	const changeFilter = (e) => setSearchBarFilter(e.target.value);
 
 	const keys = ["title", "brand"];
-	const search = (data) => {
-		return data.filter((item) =>
-			keys.some((key) => item[key].toLowerCase().includes(searchBarFilter))
+	const searchFilter = (product) =>
+		keys.some((key) =>
+			product[key].toLowerCase().includes(searchBarFilter.toLowerCase())
 		);
-	};
+
+	const aThirdFilter = (product) => true;
+	const anotherFilter = (product) => true;
+
+	const filteredProducts = productsData
+		// .filter(product => searchFilter(product))
+		.filter(searchFilter)
+		.filter(anotherFilter)
+		.filter(aThirdFilter);
 
 	// const search = (data) => {
 	// 	return data.filter((item) =>
@@ -83,10 +91,10 @@ function App() {
 				/>
 			)}
 			<ProductList
-				productsData={search(productsData)}
+				productsData={filteredProducts}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
-				searchBarFilter={searchBarFilter}
+				// searchBarFilter={searchBarFilter}
 			/>
 		</div>
 	);
