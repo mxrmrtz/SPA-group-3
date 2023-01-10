@@ -1,0 +1,22 @@
+{
+	"drones": [
+		{	
+			"featureName": "Quadcopter Features",
+			"featuresAttributes": [
+				"App-Controlled",
+				"Obstacle Avoidance",
+				"Video Downlink Capable",
+				"Wi-Fi"
+			]
+		},
+		{
+			"featureName": "video Capture Resolution",
+			"featuresAttributes": ["4K UHD 2160p", "FHD 1080p", "HD 720p"]
+		},
+		{
+			"featureName": "Operator Skill Level",
+
+			"featuresAttributes": ["Beginner", "Intermediate", "Expert"]
+		}
+	]
+}
