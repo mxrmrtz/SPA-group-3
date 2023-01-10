@@ -10,6 +10,32 @@ function App() {
 	const [favorites, setFavorites] = useState([]);
 	const [showFavorites, setShowFavorites] = useState(false);
 
+	//working on searchbar-filter bellow
+
+	const [searchBarFilter, setSearchBarFilter] = useState("");
+	const changeFilter = (e) => setSearchBarFilter(e.target.value);
+
+	const keys = ["title", "brand"];
+	const searchFilter = (product) =>
+		keys.some((key) =>
+			product[key].toLowerCase().includes(searchBarFilter.toLowerCase())
+		);
+
+	const aThirdFilter = (product) => true;
+	const anotherFilter = (product) => true;
+
+	const filteredProducts = productsData
+		// .filter(product => searchFilter(product))
+		.filter(searchFilter)
+		.filter(anotherFilter)
+		.filter(aThirdFilter);
+
+	// const search = (data) => {
+	// 	return data.filter((item) =>
+	// 		item.title.toLowerCase().includes(searchBarFilter)
+	// 	);
+	// };
+
 	const favoritesLen = favorites.length;
 	const cartLen = cart.length;
 
@@ -51,6 +77,7 @@ function App() {
 				toggleFavorites={toggleFavorites}
 				cartLen={cartLen}
 				favoritesLen={favoritesLen}
+				changeFilter={changeFilter}
 			/>
 			{showCart && (
 				<Cart cart={cart} deleteCartItem={deleteCartItem} cartLen={cartLen} />
@@ -64,9 +91,10 @@ function App() {
 				/>
 			)}
 			<ProductList
-				productsData={productsData}
+				productsData={filteredProducts}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
+				// searchBarFilter={searchBarFilter}
 			/>
 		</div>
 	);
