@@ -10,6 +10,24 @@ function App() {
 	const [favorites, setFavorites] = useState([]);
 	const [showFavorites, setShowFavorites] = useState(false);
 
+	//working on searchbar-filter bellow
+
+	const [searchBarFilter, setSearchBarFilter] = useState("");
+	const changeFilter = (e) => setSearchBarFilter(e.target.value);
+
+	const keys = ["title", "brand"];
+	const search = (data) => {
+		return data.filter((item) =>
+			keys.some((key) => item[key].toLowerCase().includes(searchBarFilter))
+		);
+	};
+
+	// const search = (data) => {
+	// 	return data.filter((item) =>
+	// 		item.title.toLowerCase().includes(searchBarFilter)
+	// 	);
+	// };
+
 	const favoritesLen = favorites.length;
 	const cartLen = cart.length;
 
@@ -51,6 +69,7 @@ function App() {
 				toggleFavorites={toggleFavorites}
 				cartLen={cartLen}
 				favoritesLen={favoritesLen}
+				changeFilter={changeFilter}
 			/>
 			{showCart && (
 				<Cart cart={cart} deleteCartItem={deleteCartItem} cartLen={cartLen} />
@@ -64,9 +83,10 @@ function App() {
 				/>
 			)}
 			<ProductList
-				productsData={productsData}
+				productsData={search(productsData)}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
+				searchBarFilter={searchBarFilter}
 			/>
 		</div>
 	);
