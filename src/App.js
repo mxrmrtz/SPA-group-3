@@ -5,8 +5,7 @@ import Favorites from "./components/Favorites/Favorites";
 import FeatureFilter from "./components/FeatureFilter/FeatureFilter";
 import Cart from "./components/ShoppingCart/Cart";
 import NavBar2 from "./components/Nav-bottom/NavBar2";
-import PriceFilter from "./components/PriceFilter/PriceFilter.js"
-
+import PriceFilter from "./components/PriceFilter/PriceFilter.js";
 
 import { useState } from "react";
 
@@ -15,11 +14,13 @@ function App() {
 	const [showCart, setShowCart] = useState(false);
 	const [favorites, setFavorites] = useState([]);
 	const [showFavorites, setShowFavorites] = useState(false);
-
-	//working on searchbar-filter bellow
-
+	const [priceFilterMin, setPriceFilterMin] = useState(0);
+	const [priceFilterMax, setPriceFilterMax] = useState(1000000);
 	const [searchBarFilter, setSearchBarFilter] = useState("");
 	const [searchBrand, setSearchBrand] = useState("");
+
+	const favoritesLen = favorites.length;
+	const cartLen = cart.length;
 
 	const changeFilter = (e) => setSearchBarFilter(e.target.value);
 	const keys = ["title", "brand"];
@@ -48,58 +49,32 @@ function App() {
 			product.features.filter((feature) => features.includes(feature))
 				.length === features.length
 		);
-
 	};
-
-	//work on brand filter function here
-
-	const aThirdFilter = (product) => true;
-
 
 	const brandFilter = (product) => {
 		if (searchBrand.length === 0) {
 			return true;
 		}
-		return (product.brand === searchBrand);
-	}
+		return product.brand === searchBrand;
+	};
 
-    // price filter stuff 
-
-	const[priceFilterMin, setPriceFilterMin] = useState(0);
-	const [priceFilterMax, setPriceFilterMax] = useState(1000000);
-
-	const setMin = (e)=>
+	const setMin = (e) =>
 		setPriceFilterMin(e.target.value === "" ? 0 : parseInt(e.target.value));
-	const setMax = (e)=>
-		setPriceFilterMax(e.target.value === "" ? 1000000 : parseInt(e.target.value));
-
+	const setMax = (e) =>
+		setPriceFilterMax(
+			e.target.value === "" ? 1000000 : parseInt(e.target.value)
+		);
 
 	const priceFilterFunc = (product) =>
-	product.price > priceFilterMin && product.price < priceFilterMax
-
-
+		product.price > priceFilterMin && product.price < priceFilterMax;
 
 	// connect the filter chain here
 
 	const filteredProducts = productsData
 		.filter(searchFilter)
 		.filter(featureFilter)
-		// type your filter function name here
-		.filter(aThirdFilter)
-
-		.filter(brandFilter);
-
-		.filter((product) => priceFilterFunc(product));
-
-
-	// const search = (data) => {
-	// 	return data.filter((item) =>
-	// 		item.title.toLowerCase().includes(searchBarFilter)
-	// 	);
-	// };
-
-	const favoritesLen = favorites.length;
-	const cartLen = cart.length;
+		.filter(brandFilter)
+		.filter(priceFilterFunc);
 
 	const addToCart = (product) => {
 		setCart([...cart, { ...product, id: cart.length }]);
@@ -132,10 +107,9 @@ function App() {
 		setFavorites(favorites.filter((item) => item.id !== product.id));
 	};
 
-
 	const handleBrandSearch = (brandName) => {
 		setSearchBrand(brandName);
-	}
+	};
 
 	return (
 		<div>
@@ -146,10 +120,7 @@ function App() {
 				favoritesLen={favoritesLen}
 				changeFilter={changeFilter}
 			/>
-			<NavBar2
-				data={productsData}
-				selected={handleBrandSearch}
-			/>
+			<NavBar2 data={productsData} selected={handleBrandSearch} />
 			{showCart && (
 				<Cart cart={cart} deleteCartItem={deleteCartItem} cartLen={cartLen} />
 			)}
@@ -169,12 +140,10 @@ function App() {
 				productsData={filteredProducts}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
-			// searchBarFilter={searchBarFilter}
+				// searchBarFilter={searchBarFilter}
 			/>
-			<PriceFilter setMin={setMin} setMax={setMax}/>
+			<PriceFilter setMin={setMin} setMax={setMax} />
 		</div>
-		
-		
 	);
 }
 
