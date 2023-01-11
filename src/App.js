@@ -4,7 +4,9 @@ import NavBar from "./components/Nav-top/NavBar";
 import Favorites from "./components/Favorites/Favorites";
 import FeatureFilter from "./components/FeatureFilter/FeatureFilter";
 import Cart from "./components/ShoppingCart/Cart";
+import NavBar2 from "./components/Nav-bottom/NavBar2";
 import PriceFilter from "./components/PriceFilter/PriceFilter.js"
+
 
 import { useState } from "react";
 
@@ -17,6 +19,7 @@ function App() {
 	//working on searchbar-filter bellow
 
 	const [searchBarFilter, setSearchBarFilter] = useState("");
+	const [searchBrand, setSearchBrand] = useState("");
 
 	const changeFilter = (e) => setSearchBarFilter(e.target.value);
 	const keys = ["title", "brand"];
@@ -45,11 +48,20 @@ function App() {
 			product.features.filter((feature) => features.includes(feature))
 				.length === features.length
 		);
+
 	};
 
 	//work on brand filter function here
 
 	const aThirdFilter = (product) => true;
+
+
+	const brandFilter = (product) => {
+		if (searchBrand.length === 0) {
+			return true;
+		}
+		return (product.brand === searchBrand);
+	}
 
     // price filter stuff 
 
@@ -66,6 +78,7 @@ function App() {
 	product.price > priceFilterMin && product.price < priceFilterMax
 
 
+
 	// connect the filter chain here
 
 	const filteredProducts = productsData
@@ -73,7 +86,11 @@ function App() {
 		.filter(featureFilter)
 		// type your filter function name here
 		.filter(aThirdFilter)
+
+		.filter(brandFilter);
+
 		.filter((product) => priceFilterFunc(product));
+
 
 	// const search = (data) => {
 	// 	return data.filter((item) =>
@@ -115,6 +132,11 @@ function App() {
 		setFavorites(favorites.filter((item) => item.id !== product.id));
 	};
 
+
+	const handleBrandSearch = (brandName) => {
+		setSearchBrand(brandName);
+	}
+
 	return (
 		<div>
 			<NavBar
@@ -123,6 +145,10 @@ function App() {
 				cartLen={cartLen}
 				favoritesLen={favoritesLen}
 				changeFilter={changeFilter}
+			/>
+			<NavBar2
+				data={productsData}
+				selected={handleBrandSearch}
 			/>
 			{showCart && (
 				<Cart cart={cart} deleteCartItem={deleteCartItem} cartLen={cartLen} />
@@ -143,7 +169,7 @@ function App() {
 				productsData={filteredProducts}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
-				// searchBarFilter={searchBarFilter}
+			// searchBarFilter={searchBarFilter}
 			/>
 			<PriceFilter setMin={setMin} setMax={setMax}/>
 		</div>
