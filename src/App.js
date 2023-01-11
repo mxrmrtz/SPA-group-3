@@ -4,6 +4,7 @@ import NavBar from "./components/Nav-top/NavBar";
 import Favorites from "./components/Favorites/Favorites";
 import FeatureFilter from "./components/FeatureFilter/FeatureFilter";
 import Cart from "./components/ShoppingCart/Cart";
+import NavBar2 from "./components/Nav-bottom/NavBar2";
 
 import { useState } from "react";
 
@@ -16,6 +17,7 @@ function App() {
 	//working on searchbar-filter bellow
 
 	const [searchBarFilter, setSearchBarFilter] = useState("");
+	const [searchBrand, setSearchBrand] = useState("");
 
 	const changeFilter = (e) => setSearchBarFilter(e.target.value);
 	const keys = ["title", "brand"];
@@ -44,11 +46,19 @@ function App() {
 			product.features.filter((feature) => features.includes(feature))
 				.length === features.length
 		);
+
 	};
 
 	//work on brand filter function here
 
 	const aThirdFilter = (product) => true;
+
+	const brandFilter = (product) => {
+		if (searchBrand.length === 0) {
+			return true;
+		}
+		return (product.brand === searchBrand);
+	}
 
 	// connect the filter chain here
 
@@ -56,8 +66,8 @@ function App() {
 		.filter(searchFilter)
 		.filter(featureFilter)
 		// type your filter function name here
-		.filter(aThirdFilter);
-
+		.filter(aThirdFilter)
+		.filter(brandFilter);
 	// const search = (data) => {
 	// 	return data.filter((item) =>
 	// 		item.title.toLowerCase().includes(searchBarFilter)
@@ -98,6 +108,11 @@ function App() {
 		setFavorites(favorites.filter((item) => item.id !== product.id));
 	};
 
+
+	const handleBrandSearch = (brandName) => {
+		setSearchBrand(brandName);
+	}
+
 	return (
 		<div>
 			<NavBar
@@ -106,6 +121,10 @@ function App() {
 				cartLen={cartLen}
 				favoritesLen={favoritesLen}
 				changeFilter={changeFilter}
+			/>
+			<NavBar2
+				data={productsData}
+				selected={handleBrandSearch}
 			/>
 			{showCart && (
 				<Cart cart={cart} deleteCartItem={deleteCartItem} cartLen={cartLen} />
@@ -126,7 +145,7 @@ function App() {
 				productsData={filteredProducts}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
-				// searchBarFilter={searchBarFilter}
+			// searchBarFilter={searchBarFilter}
 			/>
 		</div>
 	);

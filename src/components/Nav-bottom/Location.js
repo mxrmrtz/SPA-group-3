@@ -1,6 +1,7 @@
-import Countries from '../Data/countries.json';
+import Countries from './countries.json';
 import { useState } from 'react';
 import { MdLocationOn } from "react-icons/md";
+import LocationCss from "./Location.module.css";
 
 const Location = () => {
     const [country, setCountry] = useState('loaaaading...');
@@ -17,7 +18,7 @@ const Location = () => {
     });
 
     return (
-        <div className='location'>
+        <div className={LocationCss.location}>
             <span> <MdLocationOn /> : {country}</span>
         </div>
     )
