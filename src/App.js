@@ -4,6 +4,7 @@ import NavBar from "./components/Nav-top/NavBar";
 import Favorites from "./components/Favorites/Favorites";
 import FeatureFilter from "./components/FeatureFilter/FeatureFilter";
 import Cart from "./components/ShoppingCart/Cart";
+import PriceFilter from "./components/PriceFilter/PriceFilter.js"
 
 import { useState } from "react";
 
@@ -50,13 +51,29 @@ function App() {
 
 	const aThirdFilter = (product) => true;
 
+    // price filter stuff 
+
+	const[priceFilterMin, setPriceFilterMin] = useState(0);
+	const [priceFilterMax, setPriceFilterMax] = useState(1000000);
+
+	const setMin = (e)=>
+		setPriceFilterMin(e.target.value === "" ? 0 : parseInt(e.target.value));
+	const setMax = (e)=>
+		setPriceFilterMax(e.target.value === "" ? 1000000 : parseInt(e.target.value));
+
+
+	const priceFilterFunc = (product) =>
+	product.price > priceFilterMin && product.price < priceFilterMax
+
+
 	// connect the filter chain here
 
 	const filteredProducts = productsData
 		.filter(searchFilter)
 		.filter(featureFilter)
 		// type your filter function name here
-		.filter(aThirdFilter);
+		.filter(aThirdFilter)
+		.filter((product) => priceFilterFunc(product));
 
 	// const search = (data) => {
 	// 	return data.filter((item) =>
@@ -128,7 +145,10 @@ function App() {
 				toggleAddFavorites={toggleAddFavorites}
 				// searchBarFilter={searchBarFilter}
 			/>
+			<PriceFilter setMin={setMin} setMax={setMax}/>
 		</div>
+		
+		
 	);
 }
 
