@@ -6,10 +6,12 @@ import FeatureFilter from "./components/FeatureFilter/FeatureFilter";
 import Cart from "./components/ShoppingCart/Cart";
 import NavBar2 from "./components/Nav-bottom/NavBar2";
 import PriceFilter from "./components/PriceFilter/PriceFilter.js";
+import ProductItemPage from "./components/Products/ProductItemPage";
 
 import { useState } from "react";
 
 function App() {
+	const [productPage, setProductPage] = useState();
 	const [cart, setCart] = useState([]);
 	const [showCart, setShowCart] = useState(false);
 	const [favorites, setFavorites] = useState([]);
@@ -132,11 +134,18 @@ function App() {
 					moveFavoriteToCart={moveFavoriteToCart}
 				/>
 			)}
+		{productPage && (
+					<ProductItemPage
+						setProductPage={setProductPage}
+						productsData={filteredProducts}
+					/>
+				)}
 			<FeatureFilter
 				features={features}
 				changeFeatureFilter={changeFeatureFilter}
 			/>
 			<ProductList
+				setProductPage={setProductPage}
 				productsData={filteredProducts}
 				addToCart={addToCart}
 				toggleAddFavorites={toggleAddFavorites}
