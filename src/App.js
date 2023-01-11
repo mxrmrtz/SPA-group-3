@@ -16,8 +16,8 @@ function App() {
 	//working on searchbar-filter bellow
 
 	const [searchBarFilter, setSearchBarFilter] = useState("");
+
 	const changeFilter = (e) => setSearchBarFilter(e.target.value);
-	console.log(productsData);
 	const keys = ["title", "brand"];
 	const searchFilter = (product) =>
 		keys.some((key) =>
@@ -45,13 +45,17 @@ function App() {
 				.length === features.length
 		);
 	};
+
+	//work on brand filter function here
+
 	const aThirdFilter = (product) => true;
-	console.log(features);
+
+	// connect the filter chain here
 
 	const filteredProducts = productsData
-		// .filter(product => searchFilter(product))
 		.filter(searchFilter)
 		.filter(featureFilter)
+		// type your filter function name here
 		.filter(aThirdFilter);
 
 	// const search = (data) => {
