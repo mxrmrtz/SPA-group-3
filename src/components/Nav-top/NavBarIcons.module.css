@@ -22,4 +22,5 @@
 .heartContainer:hover,
 .favoritesContainer:hover {
 	cursor: pointer;
+	color: var(--darker-grey);
 }

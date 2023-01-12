@@ -1,11 +1,33 @@
 .favoriteItemContainer {
 	display: flex;
-	flex-direction: column;
-	background-color: white;
-	width: 180px;
-	border: 1px solid black;
-	margin: 5px;
+	flex-direction: row;
+	background-color: var(--background-white);
+	border: 1px solid var(--darker-grey);
+	margin: 8px;
+	font-size: 0.87rem;
+	font-weight: 500;
+	padding: 0.5rem;
+	position: relative;
+	overflow: hidden;
 }
 .favoriteItemImage {
 	width: 150px;
+	margin-right: 1rem;
+}
+
+.favItemFeatures {
+	display: flex;
+	justify-content: space-between;
+}
+
+.deleteBtn {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+}
+
+.moveBtn {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
 }

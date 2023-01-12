@@ -16,28 +16,29 @@ const Cart = ({
 
 	return (
 		<div className={CartCSS.cartContainer}>
-			{/* {checkForEmpty ? null : (
-				<button onClick={() => deleteCartItem(deleteItem[0].id)}>delete</button>
-			)} */}
+			<h2 className={CartCSS.cartHeading}>Shopping Cart</h2>
 
-			<ul>
+			<ul className={CartCSS.listContainer}>
 				{checkForEmpty ? (
-					<div>cart is empty</div>
+					<div className={CartCSS.ifEmptyText}>Cart is empty</div>
 				) : (
 					cart.map((cartItem) => (
 						<li className={CartCSS.cartListItem}>
-							<button onClick={() => deleteCartItem(cartItem.id)}>
-								delete
-							</button>
 							<CartItem
 								cartItem={cartItem}
 								key={cartItem.id}
 								activateDelete={activateDelete}
+								deleteCartItem={deleteCartItem}
 							/>
 						</li>
 					))
 				)}
 			</ul>
+			{checkForEmpty ? null : (
+				<div className={CartCSS.cartCheckoutBtnContainer}>
+					<button className={CartCSS.cartCheckoutBtn}>Checkout</button>
+				</div>
+			)}
 		</div>
 	);
 };
