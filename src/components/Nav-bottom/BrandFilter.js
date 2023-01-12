@@ -14,10 +14,16 @@ const BrandFilter = ({ data, selected }) => {
         //pass variable brand to handleSelect function on App.js
         selected(brand);
     }
+    
+     const handleBrands = () => {
+        setSelectedBrand([])
+        selected([])
+    }
 
     return (
         <div className={BrandFilterCss.brandFilter}>
-            <span className={BrandFilterCss.brandTitle}>Brands</span>
+            <span className={BrandFilterCss.brandTitle}
+                onClick={handleBrands}>All Brands</span>
             {brands.map((b, index) =>
                 <div
                     className={(b === selectedBrand)

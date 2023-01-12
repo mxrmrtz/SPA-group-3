@@ -6,12 +6,14 @@ import FeatureFilter from "./components/FeatureFilter/FeatureFilter";
 import Cart from "./components/ShoppingCart/Cart";
 import NavBar2 from "./components/Nav-bottom/NavBar2";
 import PriceFilter from "./components/PriceFilter/PriceFilter.js";
+import ProductItemPage from "./components/Products/ProductItemPage";
 
 import AppCSS from "./App.module.css";
 
 import { useState } from "react";
 
 function App() {
+	const [productPage, setProductPage] = useState();
 	const [cart, setCart] = useState([]);
 	const [showCart, setShowCart] = useState(false);
 	const [favorites, setFavorites] = useState([]);
@@ -134,6 +136,7 @@ function App() {
 					moveFavoriteToCart={moveFavoriteToCart}
 				/>
 			)}
+
 			<div className={AppCSS.siteContainer}>
 				<div>
 					<PriceFilter setMin={setMin} setMax={setMax} />
@@ -149,6 +152,7 @@ function App() {
 					// searchBarFilter={searchBarFilter}
 				/>
 			</div>
+
 		</div>
 	);
 }

@@ -5,13 +5,14 @@ const ProductList = ({
 	productsData,
 	addToCart,
 	toggleAddFavorites,
-	searchBarFilter,
+	setProductPage,
 }) => {
 	return (
 		<div className={ProductListCSS.listContainer}>
 			<ul className={ProductListCSS.productGrid}>
 				{productsData.map((product) => (
 					<ProductItem
+						setProductPage={setProductPage}
 						key={product.id}
 						productsData={product}
 						addToCart={addToCart}

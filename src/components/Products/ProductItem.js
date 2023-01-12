@@ -2,9 +2,11 @@ import React from "react";
 import heart from "../../assets/icons/heart-icon.svg";
 import add from "../../assets/icons/Add-icon.svg";
 import ProductItemCSS from "./ProductItem.module.css";
-const ProductItem = ({ productsData, addToCart, toggleAddFavorites }) => {
+const ProductItem = ({ productsData, addToCart, toggleAddFavorites, setProductPage }) => {
+
+
 	return (
-		<li className={ProductItemCSS.productListItem}>
+		<li onClick={setProductPage} className={ProductItemCSS.productListItem}>
 			<div className={ProductItemCSS.productContainer}>
 				<div className={ProductItemCSS.iconsContainer}>
 					<button>
