@@ -1,5 +1,13 @@
+.listContainer {
+	flex-grow: 1;
+	padding: 20px;
+	box-sizing: content-box;
+}
+
 .productGrid {
-	width: 100vw;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: content-box;
 }

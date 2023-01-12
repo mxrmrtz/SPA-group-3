@@ -1,22 +1,21 @@
 .productListItem {
 	list-style: none;
-}
-
-.productContainer {
 	display: flex;
+	max-width: 25%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	border: 1px solid black;
-	width: 300px;
-	height: 400px;
 	position: relative;
+	box-sizing: content-box;
+	flex-basis: calc(33.33% - 20px);
+	margin: 10px;
 }
 
-.productImage {
-	width: 250px;
-	height: 250px;
-	object-fit: contain;
+.productContainer img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
 }
 
 .iconsContainer button {

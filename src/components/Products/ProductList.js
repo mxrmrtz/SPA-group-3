@@ -8,12 +8,9 @@ const ProductList = ({
 	searchBarFilter,
 }) => {
 	return (
-		<ul className={ProductListCSS.productGrid}>
-			{productsData
-				// .filter((product) =>
-				// 	product.title.toLowerCase().includes(searchBarFilter)
-				// )
-				.map((product) => (
+		<div className={ProductListCSS.listContainer}>
+			<ul className={ProductListCSS.productGrid}>
+				{productsData.map((product) => (
 					<ProductItem
 						key={product.id}
 						productsData={product}
@@ -21,7 +18,8 @@ const ProductList = ({
 						toggleAddFavorites={toggleAddFavorites}
 					/>
 				))}
-		</ul>
+			</ul>
+		</div>
 	);
 };
 export default ProductList;
