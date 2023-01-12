@@ -7,7 +7,6 @@ import Cart from "./components/ShoppingCart/Cart";
 import NavBar2 from "./components/Nav-bottom/NavBar2";
 import PriceFilter from "./components/PriceFilter/PriceFilter.js";
 import ProductItemPage from "./components/Products/ProductItemPage";
-
 import AppCSS from "./App.module.css";
 
 import { useState } from "react";
@@ -43,7 +42,6 @@ function App() {
 				: prevFeatures.filter((prevItem) => prevItem !== changedFeature)
 		);
 	};
-	console.log(features);
 	const featureFilter = (product) => {
 		if (features.length === 0) {
 			return true;
@@ -139,6 +137,9 @@ function App() {
 
 			<div className={AppCSS.siteContainer}>
 				<div>
+					{productPage &&< ProductItemPage productsData={productsData} setProductPage={setProductPage} />}
+				</div>
+				<div>
 					<PriceFilter setMin={setMin} setMax={setMax} />
 					<FeatureFilter
 						features={features}
@@ -149,10 +150,10 @@ function App() {
 					productsData={filteredProducts}
 					addToCart={addToCart}
 					toggleAddFavorites={toggleAddFavorites}
+					setProductPage={setProductPage}
 					// searchBarFilter={searchBarFilter}
 				/>
 			</div>
-
 		</div>
 	);
 }
