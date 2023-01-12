@@ -1,3 +1,12 @@
 .location {
-  margin: 0 1rem;
+	margin: 0 1rem;
+	font-size: 0.87rem;
+	font-weight: 300;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	margin: 0 1rem;
 }

@@ -22,7 +22,7 @@ const NavBar = ({
 				toggleFavorites={toggleFavorites}
 				favoritesLen={favoritesLen}
 			/>
-			<SignIn />
+			{/* <SignIn /> */}
 		</nav>
 	);
 };
