@@ -1,6 +1,7 @@
 .brandFilter {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .brandName {
