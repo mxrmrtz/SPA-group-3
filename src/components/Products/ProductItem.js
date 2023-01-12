@@ -18,26 +18,29 @@ const ProductItem = ({ productsData, addToCart, toggleAddFavorites, setProductPa
 					</button>
 					<button>
 						<img
+							className={ProductItemCSS.productImage}
 							src={add}
 							alt="icon used to add item to shopping cart"
 							onClick={() => addToCart(productsData)}
 						/>
 					</button>
 				</div>
-				<img
-					src={productsData.img}
-					alt="drone"
-					className={ProductItemCSS.productImage}
-				/>
-				<div>
+				<div className={ProductItemCSS.productImageContainer}>
+					<img
+						src={productsData.img}
+						alt="drone"
+						className={ProductItemCSS.productImage}
+					/>
+				</div>
+				<div className={ProductItemCSS.productTextContainer}>
 					<h2>
 						{productsData.brand} {productsData.title}
 					</h2>
-					<div>
+					<div className={ProductItemCSS.price}>
 						{productsData.units}
 						{productsData.price}
 					</div>
-					<div>{productsData.rating}</div>
+					<div className={ProductItemCSS.rating}>{productsData.rating}</div>
 				</div>
 			</div>
 		</li>

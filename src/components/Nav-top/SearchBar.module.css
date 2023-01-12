@@ -1,4 +1,26 @@
 .SearchBarContainer {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex-grow: 0.5;
+	position: relative;
+}
+
+.input {
+	border: 1px solid var(--darker-grey);
+	border-radius: 6px;
+	padding: 0.4rem;
+	width: 100%;
+	display: flex;
+}
+
+.searchBtn {
+	align-self: stretch;
+	background-color: transparent;
+	border: none;
+	border-radius: 6px;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
 }

@@ -8,6 +8,8 @@ import NavBar2 from "./components/Nav-bottom/NavBar2";
 import PriceFilter from "./components/PriceFilter/PriceFilter.js";
 import ProductItemPage from "./components/Products/ProductItemPage";
 
+import AppCSS from "./App.module.css";
+
 import { useState } from "react";
 
 function App() {
@@ -134,24 +136,23 @@ function App() {
 					moveFavoriteToCart={moveFavoriteToCart}
 				/>
 			)}
-		{productPage && (
-					<ProductItemPage
-						setProductPage={setProductPage}
-						productsData={filteredProducts}
+
+			<div className={AppCSS.siteContainer}>
+				<div>
+					<PriceFilter setMin={setMin} setMax={setMax} />
+					<FeatureFilter
+						features={features}
+						changeFeatureFilter={changeFeatureFilter}
 					/>
-				)}
-			<FeatureFilter
-				features={features}
-				changeFeatureFilter={changeFeatureFilter}
-			/>
-			<ProductList
-				setProductPage={setProductPage}
-				productsData={filteredProducts}
-				addToCart={addToCart}
-				toggleAddFavorites={toggleAddFavorites}
-				// searchBarFilter={searchBarFilter}
-			/>
-			<PriceFilter setMin={setMin} setMax={setMax} />
+				</div>
+				<ProductList
+					productsData={filteredProducts}
+					addToCart={addToCart}
+					toggleAddFavorites={toggleAddFavorites}
+					// searchBarFilter={searchBarFilter}
+				/>
+			</div>
+
 		</div>
 	);
 }

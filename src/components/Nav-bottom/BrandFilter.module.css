@@ -1,21 +1,19 @@
 .brandFilter {
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-grow: 1;
+	font-size: 0.87rem;
+	font-weight: 300;
+
 }
 
 .brandName {
-  margin: 0 0.3rem;
-  text-decoration: underline;
-}
-
-.brandNameBold {
-  margin: 0 0.3rem;
-  text-decoration: underline;
-  font-weight: 600;
+	margin: 0 0.3rem;
 }
 
 .brandTitle {
-  margin: 0 1rem 0 5rem;
-  font-weight: 600;
+	margin: 0 1rem 0 5rem;
+	font-size: 0.87rem;
+	font-weight: 300;
 }

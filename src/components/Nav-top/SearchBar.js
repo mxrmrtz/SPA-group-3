@@ -3,18 +3,17 @@ import SearchBarCSS from "./SearchBar.module.css";
 
 const SearchBar = ({ changeFilter }) => {
 	return (
-		<div className={SearchBarCSS.SearchBarContainer}>
-			<form>
-				<input
-					placeholder="DJI phantom"
-					type="text"
-					onChange={changeFilter}
-				></input>
-				<button>
-					<img src={Search} alt="search icon" />
-				</button>
-			</form>
-		</div>
+		<form className={SearchBarCSS.SearchBarContainer}>
+			<input
+				placeholder="Search"
+				type="text"
+				onChange={changeFilter}
+				className={SearchBarCSS.input}
+			/>
+			<button className={SearchBarCSS.searchBtn}>
+				<img src={Search} alt="search icon" />
+			</button>
+		</form>
 	);
 };
 export default SearchBar;
