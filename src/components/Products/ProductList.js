@@ -6,6 +6,7 @@ const ProductList = ({
 	addToCart,
 	toggleAddFavorites,
 	setProductPage,
+	favorites,
 }) => {
 	return (
 		<div className={ProductListCSS.listContainer}>
@@ -17,6 +18,7 @@ const ProductList = ({
 						productsData={product}
 						addToCart={addToCart}
 						toggleAddFavorites={toggleAddFavorites}
+						favorites={favorites}
 					/>
 				))}
 			</ul>

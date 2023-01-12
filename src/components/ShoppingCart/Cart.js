@@ -1,14 +1,9 @@
 import React from "react";
 import CartItem from "./CartItem";
 import CartCSS from "./Cart.module.css";
+import closeIcon from "../../assets/icons/close.svg";
 
-const Cart = ({
-	cart,
-	activateDelete,
-	deleteCartItem,
-	deleteItem,
-	cartLen,
-}) => {
+const Cart = ({ cart, activateDelete, deleteCartItem, cartLen, closeCart }) => {
 	const checkForEmpty = cartLen === 0 ? true : false;
 
 	console.log("TEST EMPTY");
@@ -17,6 +12,9 @@ const Cart = ({
 	return (
 		<div className={CartCSS.cartContainer}>
 			<h2 className={CartCSS.cartHeading}>Shopping Cart</h2>
+			<button className={CartCSS.close} onClick={closeCart}>
+				<img src={closeIcon} alt="close" />
+			</button>
 
 			<ul className={CartCSS.listContainer}>
 				{checkForEmpty ? (
