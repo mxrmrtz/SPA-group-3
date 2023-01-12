@@ -7,9 +7,9 @@
 }
 
 .input {
-	border: 1px solid var(--darker-grey);
+	border: 1px solid var(--lighter-grey);
 	border-radius: 6px;
-	padding: 0.4rem;
+	padding: 0.35rem;
 	width: 100%;
 	display: flex;
 }

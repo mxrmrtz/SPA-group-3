@@ -1,13 +1,15 @@
 .listContainer {
+	display: flex;
 	flex-grow: 1;
 	/* padding: 20px; */
 	box-sizing: content-box;
-	border-collapse: collapse;
+	/* align-items: center;
+	justify-content: center; */
 }
 
 .productGrid {
 	display: flex;
+	flex-grow: 1;
 	flex-wrap: wrap;
-	align-items: center;
 	box-sizing: content-box;
 }
