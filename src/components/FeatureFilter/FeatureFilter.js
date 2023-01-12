@@ -9,7 +9,7 @@ const FeatureFilter = ({ changeFeatureFilter, features }) => {
 				{featureList.drones.map(({ featureName, featuresAttributes }) => {
 					return (
 						<div key={Math.random()}>
-							<h2>{featureName}</h2>
+							<h2 className={FeatureFilterCSS.featureFilter}>{featureName}</h2>
 							{featuresAttributes.map((featureAtrribute) => (
 								<FilterCheckbox
 									changeFeatureFilter={changeFeatureFilter}
