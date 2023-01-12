@@ -1,6 +1,36 @@
 .sideMenuContainer {
-	width: 300px;
-	background-color: #eee;
-	padding: 20px;
-	display: flex;
+  width: 300px;
+  background-color: #ffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
+
+.header {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.priceInput {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #ffff;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.field input {
+  background-color: #ffff;
+  margin-right: 15px;
+  width: 132px;
+  height: 32px;
+  border-radius: 6px;
+  border-color: #e5e9eb;
+  border-style: solid;
+  border-width: thin;
+  text-align: center;
 }

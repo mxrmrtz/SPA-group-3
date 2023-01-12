@@ -4,18 +4,17 @@ const priceFilter = ({ setMin, setMax }) => {
 	return (
 		<div className={PriceFilterCss.sideMenuContainer}>
 			<header>
-				<h2>Price, $</h2>
+				<h2 className={PriceFilterCss.header}>Price, $</h2>
 			</header>
 			<div className={PriceFilterCss.priceInput}>
 				<div className={PriceFilterCss.field}>
-					<input type="number" name="input-min" onChange={setMin} />
+					<input type="text" name="input-min" placeholder="Min" onChange={setMin} />
+		
 				</div>
+				
 				<div className={PriceFilterCss.field}>
-					<input type="number" name="input-max" onChange={setMax} />
+					<input type="text" name="input-max" placeholder="Max" onChange={setMax} />
 				</div>
-			</div>
-			<div className={PriceFilterCss.slider}>
-				<div className={PriceFilterCss.progress}></div>
 			</div>
 		</div>
 	);

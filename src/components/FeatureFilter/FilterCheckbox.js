@@ -4,8 +4,8 @@ const FilterCheckbox = ({featureAtrribute, checked, changeFeatureFilter}) => {
 	return (
 		<>
 			<fieldset onChange={changeFeatureFilter}>
-				<label htmlFor={id}>{featureAtrribute}</label>
 				<input id={id} value={featureAtrribute} defaultChecked={checked} type="checkbox"></input>
+				<label htmlFor={id}>{featureAtrribute}</label>
 			</fieldset>
 		</>
 	);
