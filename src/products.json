@@ -1,3 +1,4 @@
+
 [
   {
     "id": "e1",
@@ -6,7 +7,7 @@
     "price": 599,
     "units": "$",
     "rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id1.png",
     "features": [
       "App-Controlled",
       "Obstacle Avoidance",
@@ -25,7 +26,7 @@
     "price": 1449,
     "units": "$",
     "rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id2.png",
     "features": [
       "App-Controlled",
       "Obstacle Avoidance",
@@ -44,7 +45,7 @@
     "price": 749,
     "units": "$",
     "rating": "3.5/5",
-    "img": "https://www1.djicdn.com/dps/40e881330a7e92a0bc3f437616ccdc5b.webp",
+    "img": "productImages/id3.png",
     "features": [
       "App-Controlled",
       "Obstacle Avoidance",
@@ -58,23 +59,35 @@
   },
   {
     "id": "e4",
-    "title": "4 Series — Intelligent Flight Battery ",
+    "title": "Intelligent Flight Battery ",
     "brand": "DJI",
     "price": 186,
     "units": "$",
     "rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
-    "features": ["4K UHD 210p"]
+    "img": "productImages/id3.png",
+    "features": [
+      "App-Controlled",
+      "Video Downlink Capable",
+      "Wi-Fi",
+      "4K UHD 210p",
+      "Expert"
+    ]
   },
   {
     "id": "e5",
-    "title": "DJI Phantom 3 — Intelligent Flight Battery",
+    "title": "Phantom 3 — Flight Battery",
     "brand": "DJI",
     "price": 98,
     "units": "$",
     "rating": "3.5/5",
-    "img": "https://www.pricerunner.se/product/1200x630/1691363296/DJI-Phantom-3-Intelligent-Flight-Battery.jpg",
-    "features": ["4K UHD 210p"]
+    "img": "productImages/id3.png",
+    "features": [
+      "App-Controlled",
+      "Video Downlink Capable",
+      "Wi-Fi",
+      "4K UHD 210p",
+      "Expert"
+    ]
   },
   {
     "id": "e6",
@@ -83,7 +96,7 @@
     "price": 399,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id6.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",
@@ -99,7 +112,7 @@
     "price": 599,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id1.png",
     "features": [
       "App-Controlled",
       "Obstacle Avoidance",
@@ -117,7 +130,7 @@
     "price": 229,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id2.png",
     "features": [
       "App-Controlled",
       "Wi-Fi",
@@ -133,7 +146,7 @@
     "price": 239,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id3.png",
     "features": ["App-Controlled", "HD 720p", "Beginner"]
   },
   {
@@ -143,7 +156,7 @@
     "price": 399,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id4.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",
@@ -159,7 +172,7 @@
     "price": 599,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id5.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",
@@ -175,7 +188,7 @@
     "price": 599,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id6.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",
@@ -191,7 +204,7 @@
     "price": 599,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id1.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",
@@ -207,7 +220,7 @@
     "price": 599,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id2.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",
@@ -223,7 +236,7 @@
     "price": 599,
     "units": "$",
 		"rating": "3.5/5",
-    "img": "https://www5.djicdn.com/assets/images/products/phantom-2-vision-plus/p2v-f17b0d4e49f5ebba6abe040ae8a84340.png",
+    "img": "productImages/id3.png",
     "features": [
       "App-Controlled",
       "Video Downlink Capable",

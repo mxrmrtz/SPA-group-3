@@ -1,6 +1,8 @@
 .iconsContainer {
 	display: flex;
 	align-items: center;
+	font-size: 0.87rem;
+	color: #252c32;
 }
 
 .favoritesContainer,
@@ -8,6 +10,13 @@
 	display: flex;
 	align-items: center;
 	margin: 0.5rem;
+	margin-left: 0.25rem;
+}
+.heartContainer img {
+	margin-right: 0.25rem;
+}
+.favoritesContainer img {
+	margin-right: 0.25rem;
 }
 
 .heartContainer:hover,
