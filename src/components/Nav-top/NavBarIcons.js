@@ -14,12 +14,18 @@ const NavBarIcons = ({
 				className={NavBarIconsCSS.favoritesContainer}
 				onClick={toggleFavorites}
 			>
+				{favoritesLen === 0 ? null : (
+					<span className={NavBarIconsCSS.favCount}>{favoritesLen}</span>
+				)}
 				<img src={heart} alt="heart icon" />
-				<p>Favorit({favoritesLen})</p>
+				<p>Favorit</p>
 			</div>
 			<div className={NavBarIconsCSS.heartContainer} onClick={toggleCart}>
+				{cartLen === 0 ? null : (
+					<span className={NavBarIconsCSS.cartCount}>{cartLen}</span>
+				)}
 				<img src={Cart} alt="cart icon" />
-				<p>Cart({cartLen})</p>
+				<p>Cart</p>
 			</div>
 		</div>
 	);

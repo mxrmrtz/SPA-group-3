@@ -5,7 +5,7 @@ const NavLogo = () => {
 	return (
 		<div className={LogoCSS.logoContainer}>
 			<img src={logo} alt="logo" />
-			<h1>Drown Store</h1>
+			<h1>Drone Store</h1>
 		</div>
 	);
 };

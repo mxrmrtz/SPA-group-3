@@ -3,6 +3,12 @@
 }
 
 .logoContainer h1 {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+	.logoContainer h1 {
+		font-size: 0.8rem;
+	}
 }

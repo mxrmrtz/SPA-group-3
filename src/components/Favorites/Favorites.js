@@ -1,21 +1,26 @@
 import React from "react";
 import FavoritesItem from "./FavoriteItem";
 import FavoritesCSS from "./Favorites.module.css";
+import closeIcon from "../../assets/icons/close.svg";
 
 const Favorites = ({
 	favoritesLen,
 	favorites,
 	deleteFavoritesItem,
 	moveFavoriteToCart,
+	closeFav,
 }) => {
 	const checkForEmpty = favoritesLen === 0 ? true : false;
 
 	return (
 		<div className={FavoritesCSS.favoritesContainer}>
-			<h2 className={FavoritesCSS.favHeading}>Shopping Cart</h2>
+			<h2 className={FavoritesCSS.favHeading}>Favorites</h2>
+			<button className={FavoritesCSS.close} onClick={closeFav}>
+				<img src={closeIcon} alt="close" />
+			</button>
 			<ul className={FavoritesCSS.listContainer}>
 				{checkForEmpty ? (
-					<div>favorites is empty</div>
+					<div className={FavoritesCSS.ifEmptyText}>favorites is empty</div>
 				) : (
 					favorites.map((favItem) => (
 						<li className={FavoritesCSS.favoritesListItem}>

@@ -11,6 +11,7 @@
 	align-items: center;
 	margin: 0.5rem;
 	margin-left: 0.25rem;
+	position: relative;
 }
 .heartContainer img {
 	margin-right: 0.25rem;
@@ -23,4 +24,25 @@
 .favoritesContainer:hover {
 	cursor: pointer;
 	color: var(--darker-grey);
+}
+
+.cartCount,
+.favCount {
+	position: absolute;
+	top: -10px;
+	left: 7px;
+	background-color: var(--logo-red);
+	border-radius: 50%;
+	color: white;
+	padding: 0 0.35rem;
+	font-size: 0.7rem;
+}
+
+@media screen and (max-width: 767px) {
+	.favoritesContainer p {
+		display: none;
+	}
+	.heartContainer p {
+		display: none;
+	}
 }

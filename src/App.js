@@ -86,6 +86,14 @@ function App() {
 
 	const toggleCart = () => {
 		setShowCart(!showCart ? true : false);
+		setShowFavorites(showCart ? false : false);
+	};
+
+	const closeCart = () => {
+		setShowCart(false);
+	};
+	const closeFav = () => {
+		setShowFavorites(false);
 	};
 
 	const deleteCartItem = (id) => {
@@ -94,6 +102,7 @@ function App() {
 
 	const toggleFavorites = () => {
 		setShowFavorites(!showFavorites ? true : false);
+		setShowCart(showFavorites ? false : false);
 	};
 
 	const toggleAddFavorites = (product) => {
@@ -126,7 +135,12 @@ function App() {
 			/>
 			<NavBar2 data={productsData} selected={handleBrandSearch} />
 			{showCart && (
-				<Cart cart={cart} deleteCartItem={deleteCartItem} cartLen={cartLen} />
+				<Cart
+					cart={cart}
+					deleteCartItem={deleteCartItem}
+					cartLen={cartLen}
+					closeCart={closeCart}
+				/>
 			)}
 			{showFavorites && (
 				<Favorites
@@ -134,6 +148,7 @@ function App() {
 					favoritesLen={favoritesLen}
 					deleteFavoritesItem={deleteFavoritesItem}
 					moveFavoriteToCart={moveFavoriteToCart}
+					closeFav={closeFav}
 				/>
 			)}
 
@@ -149,10 +164,9 @@ function App() {
 					productsData={filteredProducts}
 					addToCart={addToCart}
 					toggleAddFavorites={toggleAddFavorites}
-					// searchBarFilter={searchBarFilter}
+					favorites={favorites}
 				/>
 			</div>
-
 		</div>
 	);
 }
