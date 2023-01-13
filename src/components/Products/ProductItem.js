@@ -14,7 +14,7 @@ const ProductItem = ({
 	const [src, setSrc] = useState(add);
 
 	return (
-		<li onClick={setProductPage} className={ProductItemCSS.productListItem}>
+		<li className={ProductItemCSS.productListItem}>
 			<div className={ProductItemCSS.productContainer}>
 				<div className={ProductItemCSS.iconsContainer}>
 					<button>
@@ -47,6 +47,7 @@ const ProductItem = ({
 						src={productsData.img}
 						alt="drone"
 						className={ProductItemCSS.productImage}
+						onClick={setProductPage}
 					/>
 				</div>
 				<div className={ProductItemCSS.productTextContainer}>
