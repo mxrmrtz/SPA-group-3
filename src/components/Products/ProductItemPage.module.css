@@ -2,7 +2,6 @@
 	box-sizing: border-box;
 	background: none;
 	border: none;
-	
 }
 
 .card {
@@ -15,12 +14,12 @@
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	z-index: 100;
-	border: 1px solid #c4c4c4 ;
-  }
-  
-  .close{
-	  padding: 2rem;
-  }
+	border: 1px solid #c4c4c4;
+}
+
+.close {
+	padding: 2rem;
+}
 
 .section {
 	padding-top: 15rem;
@@ -41,7 +40,7 @@
 	flex-direction: row;
 }
 
-.nav_items{
+.nav_items {
 	display: flex;
 	justify-content: space-between;
 	height: 1.5rem;
@@ -61,7 +60,7 @@
 	height: 6rem;
 	background-color: #c4c4c4;
 }
-.drone_imgSide{
+.drone_imgSide {
 	padding-right: 4rem;
 }
 
@@ -70,40 +69,38 @@
 	width: 45rem;
 }
 
-.features_header{
+.features_header {
 	padding-bottom: 1rem;
 }
 
-.features{
-	color: #6D6D6D;
+.features {
+	color: #6d6d6d;
 	font-size: 1.1rem;
 }
 
 .cart {
-	color: #F6F8F9;
+	color: #f6f8f9;
 	background-color: #4094f7;
 	border-radius: 6px;
 	padding: 0.5rem 8rem;
 	margin-bottom: 2rem;
-
 }
 
-.info_section{
+.info_section {
 	padding-left: 4rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-.info_section_name{
+.info_section_name {
 	font-size: 2rem;
 	padding-bottom: 1.5rem;
 }
 
-.info_section__buttons{
+.info_section__buttons {
 	padding: 4rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
