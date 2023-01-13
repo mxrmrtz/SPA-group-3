@@ -46,3 +46,14 @@
 	border-style: solid;
 	border-width: thin;
 }
+
+.field input:focus {
+	outline: none;
+	border: 1px solid var(--darker-grey);
+}
+
+@media screen and (max-width: 991px) {
+	.sideMenuContainer {
+		display: none;
+	}
+}

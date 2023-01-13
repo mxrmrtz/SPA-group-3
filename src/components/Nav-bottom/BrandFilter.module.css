@@ -13,6 +13,13 @@
 	border-radius: 6px;
 }
 
+.brandNameBold {
+	margin: 0 0.3rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 6px;
+	text-decoration: underline;
+}
+
 .brandName:hover {
 	cursor: pointer;
 	text-decoration: underline;
@@ -22,4 +29,11 @@
 	margin: 0 1rem 0 5rem;
 	font-size: 0.87rem;
 	font-weight: 300;
+}
+
+@media screen and (max-width: 767px) {
+	.brandName {
+		font-size: 0.7rem;
+		justify-content: space-between;
+	}
 }

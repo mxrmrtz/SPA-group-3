@@ -5,3 +5,8 @@
 	font-size: 0.87rem;
 	color: #252c32;
 }
+
+.checkboxContainer:hover {
+	cursor: pointer;
+	text-decoration: underline var(--darker-grey);
+}

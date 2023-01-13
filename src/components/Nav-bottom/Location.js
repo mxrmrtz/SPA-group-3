@@ -4,7 +4,7 @@ import MdLocationOn from "../../assets/icons/Location-icon.svg";
 import LocationCss from "./Location.module.css";
 
 const Location = () => {
-	const [country, setCountry] = useState("loaaaading...");
+	const [country, setCountry] = useState("loading...");
 
 	navigator.geolocation.getCurrentPosition((position) => {
 		let lat = position.coords.latitude;
