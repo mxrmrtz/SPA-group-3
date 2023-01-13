@@ -32,3 +32,16 @@
 	font-size: 1.5rem;
 	font-weight: 500;
 }
+.ifEmptyText {
+	font-size: 0.87rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-right: 3rem;
+}
+
+.close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}

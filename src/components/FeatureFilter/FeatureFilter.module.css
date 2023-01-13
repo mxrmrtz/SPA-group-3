@@ -15,3 +15,9 @@
 	align-items: flex-start;
 	margin-left: 1.25rem;
 }
+
+@media screen and (max-width: 991px) {
+	.sideMenuContainer {
+		display: none;
+	}
+}
