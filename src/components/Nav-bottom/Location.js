@@ -9,6 +9,7 @@ const Location = () => {
 	navigator.geolocation.getCurrentPosition((position) => {
 		let lat = position.coords.latitude;
 		let lon = position.coords.longitude;
+		//console.log("lat", lat, "lon", lon);
 
 		let API_key1 = "ba809da45bb1b9acdbe937e8ceaaf610";
 
@@ -21,8 +22,7 @@ const Location = () => {
 
 	return (
 		<div className={LocationCss.location}>
-			<img src={MdLocationOn} alt="location" className={LocationCss.icon} />{" "}
-			{country}
+			<img src={MdLocationOn} alt="location" className={LocationCss.icon} /> {country}
 		</div>
 	);
 };
